@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Calculator</title> 
+</head>
+<body>
+    <h3>Calculator</h3>
+
+	<input type="text" id="fNumber" name="fNumber">
+
+	<select id="operator" name="operator">
+        <option value="select">select operator</option>
+		<option value='+'>+</option>
+		<option value='-'>-</option>
+		<option value='*'>*</option>
+		<option value='/'>/</option>
+  	</select>
+
+	<input type="text" id="sNumber" name="sNumber">
+    
+	<button type="button" id="button" onclick = "Calculate()">press =</button>
+	<input type="text" id="total" name="total">
+   
+    <script language = "javascript" type = "text/javascript">
+
+		function Calculate(){
+			let firstNumber = document.getElementById("fNumber").value;
+			let secondNumber = document.getElementById("sNumber").value;
+            let selectOp = document.getElementById("operator").value;
+			let total 
+
+            if (firstNumber != '' || secondNumber != '' || firstNumber === null || secondNumber === null) {
+                if ((isNaN(firstNumber) || isNaN(secondNumber))){
+                alert(`Fill Both Fields With Valid Numbers.
+No Special Characters, Letters Or Empty Fields Allowed.`)
+                } 
+            }
+
+            if (firstNumber == null || firstNumber == "" ||
+            secondNumber == null || secondNumber == "") {
+            alert(`Fill Both Fields With Valid Numbers to Perform Calculation.
+No Empty Fields Allowed.`);
+            return false
+            }
+            
+		    if (selectOp === '+') {
+				total = Number(firstNumber) + Number(secondNumber);
+            }
+			else if (selectOp === "-") {
+				total = Number(firstNumber) - Number(secondNumber);
+            }
+			else if (selectOp === "*") {
+				total = Number(firstNumber) * Number(secondNumber);
+			}
+			else if (selectOp === "/") {
+				total = Number(firstNumber) / Number(secondNumber);
+            }
+            else  alert("Please Select A Valid Operator");
+
+			document.getElementById("total").value = total;
+        }
+
+    </script>
+</body>
+</html>
