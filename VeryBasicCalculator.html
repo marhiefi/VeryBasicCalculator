@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Calculator</title> 
+	<script src="calculate.js"></script>
 </head>
 <body>
     <h3>Calculator</h3>
@@ -28,10 +29,10 @@
             let selectOp = document.getElementById("operator").value;
 			let total 
 
-            if (firstNumber != '' || secondNumber != '' || firstNumber === null || secondNumber === null) {
+            if (firstNumber != '' || secondNumber != '') {
                 if ((isNaN(firstNumber) || isNaN(secondNumber))){
                 alert(`Fill Both Fields With Valid Numbers.
-No Special Characters, Letters Or Empty Fields Allowed.`)
+No Special Characters or Letters Allowed.`)
                 } 
             }
 
